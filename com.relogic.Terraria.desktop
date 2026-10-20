@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Terraria
+Comment=2D sandbox adventure game
+Exec=Terraria.bin.x86_64
+Icon=com.relogic.Terraria
+Terminal=false
+Type=Application
+Categories=Game;ActionGame;

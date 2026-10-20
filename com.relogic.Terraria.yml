@@ -1,0 +1,26 @@
+id: com.relogic.Terraria
+runtime: org.freedesktop.Platform
+runtime-version: '26.08'
+sdk: org.freedesktop.Sdk
+command: Terraria.bin.x86_64
+
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+  - --device=all
+  - --share=network
+  - --share=ipc
+
+modules:
+  - name: terraria
+    buildsystem: simple
+    build-commands:
+      - install -Dm644 com.relogic.Terraria.png /app/share/icons/hicolor/128x128/apps/com.relogic.Terraria.png
+      - install -Dm644 com.relogic.Terraria.desktop /app/share/applications/com.relogic.Terraria.desktop
+      - mkdir -p /app/bin
+      - cp -r terraria-game/. /app/bin/
+      - chmod +x /app/bin/Terraria.bin.x86_64
+    sources:
+      - type: dir
+        path: terraria-game
